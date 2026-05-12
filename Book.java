@@ -26,7 +26,7 @@ public class Book {
         Book b2 = new Book("Lap trinh Java", "Tran Van B", 120000, true);
         Book b3 = new Book("Dac Nhan Tam", "Dale Carnegie", 80000, false);
 
-        System.out.println("--- Truoc khi giam gia ---");
+        System.out.println("Truoc khi giam gia:");
         b1.printInfo();
         b2.printInfo();
         b3.printInfo();
@@ -36,7 +36,7 @@ public class Book {
         b2.applyDiscount(10);
         b3.applyDiscount(10);
 
-        System.out.println("\n--- Sau khi giam 10% ---");
+        System.out.println("\nSau khi giam 10%:");
         b1.printInfo();
         b2.printInfo();
         b3.printInfo();
