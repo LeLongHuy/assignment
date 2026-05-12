@@ -14,41 +14,31 @@ public class Book {
     }
 
     public void printInfo() {
-        System.out.println("Tên sách: " + title);
-        System.out.println("Tác giả: " + author);
-        System.out.println("Giá bán: $" + price);
-        System.out.println("Tình trạng: " + (inStock ? "Còn hàng" : "Hết hàng"));
-        System.out.println("---------------------------------");
+        System.out.println("Ten sach: " + title + " | Tac gia: " + author + " | Gia: " + price + " | Con hang: " + inStock);
     }
 
     public void applyDiscount(double percent) {
-        if (percent > 0 && percent <= 100) {
-            double discountAmount = price * (percent / 100);
-            price = price - discountAmount;
-            System.out.println("[!] Đã áp dụng giảm " + percent + "% cho sách: " + title);
-        } else {
-            System.out.println("Phần trăm giảm giá không hợp lệ!");
-        }
+        price = price - (price * percent / 100);
     }
 
     public static void main(String[] args) {
-        Book book1 = new Book("Clean Code", "Robert C. Martin", 40.0, true);
-        Book book2 = new Book("Effective Java", "Joshua Bloch", 50.0, true);
-        Book book3 = new Book("The Pragmatic Programmer", "Andrew Hunt", 45.0, false);
+        Book b1 = new Book("Toan cao cap", "Nguyen Van A", 50000, true);
+        Book b2 = new Book("Lap trinh Java", "Tran Van B", 120000, true);
+        Book b3 = new Book("Dac Nhan Tam", "Dale Carnegie", 80000, false);
 
-        System.out.println("=== THÔNG TIN SÁCH BAN ĐẦU ===");
-        book1.printInfo();
-        book2.printInfo();
-        book3.printInfo();
+        System.out.println("--- Truoc khi giam gia ---");
+        b1.printInfo();
+        b2.printInfo();
+        b3.printInfo();
 
-        System.out.println("\n=== THỰC HIỆN GIẢM GIÁ ===");
-        book1.applyDiscount(10);
-        book2.applyDiscount(10);
-        book3.applyDiscount(10);
+        // Giam 10%
+        b1.applyDiscount(10);
+        b2.applyDiscount(10);
+        b3.applyDiscount(10);
 
-        System.out.println("\n=== THÔNG TIN SÁCH SAU KHI GIẢM GIÁ 10% ===");
-        book1.printInfo();
-        book2.printInfo();
-        book3.printInfo();
+        System.out.println("\n--- Sau khi giam 10% ---");
+        b1.printInfo();
+        b2.printInfo();
+        b3.printInfo();
     }
 }
